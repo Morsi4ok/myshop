@@ -19,8 +19,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-   path('admin/', admin.site.urls),
-   path('', include(('shop.urls', 'shop'), namespace='shop')),
+    path('admin/', admin.site.urls),
+    path('orders/', include(('orders.urls', 'orders'), namespace='orders')),
+    path('', include(('shop.urls', 'shop'), namespace='shop')),
+    path('cart/', include(('cart.urls', 'cart'), namespace='cart')),
+
 ]
 
 if settings.DEBUG:
